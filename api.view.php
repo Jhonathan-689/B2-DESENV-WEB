@@ -9,15 +9,14 @@
         <div class="box">
             <h2 class="title is-5">Buscar Livro por ISBN</h2>
 
-            <form method="get" class="mb-4">
+            <form method="get" class="mb-4" id="form-busca-api">
                 <div class="field has-addons">
                     <div class="control is-expanded">
-                        <input class="input" type="text" name="isbn"
-                            value="<?= htmlspecialchars($isbn) ?>"
+                        <input class="input" type="text" name="isbn" value="<?= htmlspecialchars($isbn) ?>"
                             placeholder="Ex.: 9780140328721">
                     </div>
                     <div class="control">
-                        <button class="button is-link">Buscar</button>
+                        <button class="button is-link" id="botao-buscar">Buscar</button>
                     </div>
                 </div>
             </form>
@@ -41,12 +40,14 @@
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <form method="post" class="card-footer-item">
+                        <form method="post" action="api.php" class="card-footer-item">
                             <input type="hidden" name="import" value="1">
                             <input type="hidden" name="titulo" value="<?= htmlspecialchars($book['title']) ?>">
                             <input type="hidden" name="autor" value="<?= htmlspecialchars($book['authors']) ?>">
                             <input type="hidden" name="ano" value="<?= htmlspecialchars($book['year']) ?>">
-                            <button type="submit" class="button is-success">Importar para a Biblioteca</button>
+                            <button type="submit" class="button is-success">
+                                Importar para a Biblioteca
+                            </button>
                         </form>
                     </footer>
                 </div>
@@ -60,3 +61,17 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('form-busca-api');
+        const botao = document.getElementById('botao-buscar');
+
+        if (form && botao) {
+            form.addEventListener('submit', function () {
+                botao.classList.add('is-loading');
+                botao.setAttribute('disabled', 'disabled');
+            });
+        }
+    });
+</script>
