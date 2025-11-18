@@ -1,6 +1,23 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/menu.php'; ?>
 
+<?php 
+
+$editando = false;
+$editarLivro = null;
+
+if (isset($_GET['edit'])) {
+   $id = $_GET['edit'];
+   foreach ($livros as $liv) {
+      if ($liv['id'] == $id) {
+      $editarLivro = $liv;
+      $editando = true;
+break;
+}
+}
+}
+?>
+
 <section class="section">
     <div class="container">
         <h1 class="title">Livros</h1>
@@ -14,44 +31,42 @@
                         <div class="field">
                             <label class="label">Título</label>
                             <div class="control">
-                                <input class="input" name="titulo" required>
+                                <input class="input" name="titulo" value="<?= $editando ? htmlspecialchars($editarLivro['titulo']) : '' ?>" required>
                             </div>
                         </div>
                         <div class="field">
                             <label class="label">Autor</label>
                             <div class="control">
-                                <input class="input" name="autor" required>
+                                <input class="input" name="autor" value="<?= $editando ? htmlspecialchars($editarLivro['autor']) : '' ?>" required>
                             </div>
                         </div>
                         <div class="field">
                             <label class="label">Ano</label>
                             <div class="control">
-                                <input class="input" name="ano" type="number" min="0" placeholder="Opcional">
+                                <input class="input" name="ano" type="number" min="0" value= "<?=$editando ? htmlspecialchars($editarLivro['ano']) : '' ?>" placeholder="Opcional">
                             </div>
                         </div>
                         <div class="field">
                             <div class="control">
-                                <button class="button is-link">Salvar</button>
+                                <button class="button is-link">
+                                    <?= $editando ? "Salvar Alterações" : "Salvar" ?>
+                                </button>
                             </div>
                         </div>
                     </form>
 
-                    <!-- COMO FAZER: implementar edição
-                        1) Crie um link "Editar" na tabela passando ?edit={id}
-                        2) Carregue o livro por id e preencha o form acima
-                        3) Se existir $_POST['id'], atualize em vez de criar
-                    -->
-                </div>
+                    </div>
             </div>
 
             <div class="column">
                 <div class="box">
                     <h3 class="title is-5">Lista de Livros</h3>
 
-                    <!-- COMO FAZER: implementar busca
-                        - Adicione um input name="q" (GET)
-                        - Filtre $livros por título/autor contendo $_GET['q']
-                    -->
+                    <form method="get">
+                       <input type="text" name="q" placeholder="Buscar..." value="<?= isset($_GET['q']) ? $_GET['q'] : '' ?>">
+                       <button>Procurar</button>
+                   </form>
+                   <hr>
 
                     <table class="table is-fullwidth is-striped is-hoverable">
                         <thead>
@@ -73,8 +88,7 @@
                                         <td><?= htmlspecialchars((string)($l['autor'] ?? '')) ?></td>
                                         <td><?= htmlspecialchars((string)($l['ano'] ?? '')) ?></td>
                                         <td class="has-text-right">
-                                            <!-- COMO FAZER: link de edição -->
-                                            <!-- <a class="button is-small is-warning" href="livros.php?edit=<?= $l['id']; ?>">Editar</a> -->
+                                        <a class="button is-small is-warning" href="livros.php?edit=<?= $l['id']; ?>">Editar</a>
                                             <a class="button is-small is-danger"
                                                 href="livros.php?del=<?= urlencode((string)($l['id'] ?? '')) ?>"
                                                 onclick="return confirm('Excluir este livro?')">

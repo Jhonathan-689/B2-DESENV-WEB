@@ -21,5 +21,5 @@ if ($autenticado) {
     exit;
 }
 
-header('Location: login.php');
+header('Location: login.php?erro=1');
 exit;

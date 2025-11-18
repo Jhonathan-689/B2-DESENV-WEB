@@ -17,16 +17,18 @@ include 'includes/header.php';
       <div class="columns is-centered">
         <div class="column is-4">
           <div class="box">
-            <h1 class="title has-text-centered">Login</h1>
+          <h1 class="title has-text-white has-text-centered">Login</h1>
 
-            <!--
-              Aqui deve mostrar uma mensagem de erro
-              quando o login falhar (ex: usuário ou senha incorretos).
-              A ideia é verificar se existe um parâmetro GET (ex: ?erro=1)
-              e exibir um "notification" do Bulma dentro desta box.
-            -->
+            <!--Aqui a Parte do Erro !-->
 
-            <form action="valida_login.php" method="post">
+            <?php if (isset($_GET['erro'])): ?>
+
+               <div class="notification is-danger">Usuário ou senha incorretos.</div>
+
+            <?php endif; ?>
+
+
+             <form action="valida_login.php" method="post">
               <div class="field">
                 <label class="label">Usuário</label>
                 <div class="control">

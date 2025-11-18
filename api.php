@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['import'])) {
   $titulo = trim($_POST['titulo'] ?? '');
   $autor = trim($_POST['autor'] ?? '');
   $ano = trim($_POST['ano'] ?? '');
+  $isbnForm = trim($_POST['isbn'] ?? '');
 
   $autorNormalizado = $autor !== '' ? $autor : 'Autor não informado';
 
@@ -46,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['import'])) {
       'titulo' => $titulo,
       'autor' => $autorNormalizado,
       'ano' => $ano,
+      'isbn' => $isbnForm;
     ];
 
     file_put_contents(

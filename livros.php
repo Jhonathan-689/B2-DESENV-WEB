@@ -16,6 +16,21 @@ if (!is_array($livros)) {
   $livros = [];
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+
+  foreach ($livros as &$liv) {
+      if ($liv['id'] == $_POST['id']) {
+          $liv['titulo'] = $_POST['titulo'];
+          $liv['autor'] = $_POST['autor'];
+          $liv['ano'] = $_POST['ano'];
+      }
+  }
+
+  file_put_contents($arquivo, json_encode($livros, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+  header('Location: livros.php');
+  exit;
+}
+
 // adicionar
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titulo'], $_POST['autor'])) {
   $titulo = trim((string)$_POST['titulo']);
@@ -61,6 +76,18 @@ if (isset($_GET['del'])) {
 }
 
 // (Opcional, futuro) busca/edição podem ser preparadas aqui e repassadas à view
+
+$editLivro = null;
+
+if (isset($_GET['edit'])) {
+    foreach ($livros as $l) {
+        if ($l['id'] == $_GET['edit']) {
+            $editLivro = $l;
+            break;
+        }
+    }
+}
+
 
 // chama a view (a view usará $livros)
 include 'livros.view.php';
