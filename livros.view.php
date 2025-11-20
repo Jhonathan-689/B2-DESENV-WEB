@@ -63,8 +63,8 @@ break;
                     <h3 class="title is-5">Lista de Livros</h3>
 
                     <form method="get">
-                       <input type="text" name="q" placeholder="Buscar..." value="<?= isset($_GET['q']) ? $_GET['q'] : '' ?>">
-                       <button>Procurar</button>
+                       <input class="input" type="text" name="q" placeholder="Buscar..." value="<?= isset($_GET['q']) ? $_GET['q'] : '' ?>">
+                       <button class="button is-black">Procurar</button>
                    </form>
                    <hr>
 

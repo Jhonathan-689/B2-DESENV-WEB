@@ -1,4 +1,14 @@
 [
-  { "usuario": "admin", "senha": "1234" },
-  { "usuario": "jhonathan", "senha": "senha" }
+    {
+        "usuario": "admin",
+        "senha": "1234"
+    },
+    {
+        "usuario": "jhonathan",
+        "senha": "senha"
+    },
+    {
+        "usuario": "Pelezin",
+        "senha": "12345"
+    }
 ]

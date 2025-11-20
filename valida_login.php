@@ -19,7 +19,8 @@ if ($autenticado) {
     $_SESSION['usuario'] = $usuario;
     header('Location: index.php');
     exit;
+} else {
+       $_SESSION['erro_login'] = "Usuário ou senha incorretos!";
+       header('Location: login.php?erro=1');
+       exit;
 }
-
-header('Location: login.php?erro=1');
-exit;

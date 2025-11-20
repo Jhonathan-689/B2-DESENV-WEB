@@ -37,8 +37,8 @@
         </div>
 
         <div class="column has-text-centered">
-          <p class="title is-4 mb-1">Davi</p>
-          <p class="subtitle is-6 has-text-grey-light">Desenvolvedor</p>
+          <p class="title is-4 mb-1">Davi Gustavo</p>
+          <p class="subtitle is-6 has-text-grey-light">Sou um Estudante de Programação no UniSalesiano Araçatuba-SP</p>
           <p>
             Entusiasta de tecnologia e sempre buscando aprender mais sobre programação, desenvolvimento web e soluções práticas.
           </p>

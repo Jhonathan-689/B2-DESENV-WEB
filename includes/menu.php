@@ -12,6 +12,7 @@
       <a class="navbar-item" href="index.php">Início</a>
       <a class="navbar-item" href="livros.php">Livros</a>
       <a class="navbar-item" href="api.php">API</a>
+      <a class="navbar-item" href="https://openlibrary.org/developers/api" >Documentação </a>
       <a class="navbar-item" href="sobre.php">Quem Somos</a>
     </div>
     <div class="navbar-end">

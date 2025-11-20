@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['import'])) {
       'titulo' => $titulo,
       'autor' => $autorNormalizado,
       'ano' => $ano,
-      'isbn' => $isbnForm;
+      'isbn' => $isbnForm
     ];
 
     file_put_contents(

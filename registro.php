@@ -11,25 +11,18 @@ if (isset($_SESSION['usuario'])) {
 include 'includes/header.php';
 ?>
 
-
 <section class="hero is-fullheight is-primary">
   <div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-4">
           <div class="box">
-          <h1 class="title has-text-white has-text-centered">Login</h1>
+            <h1 class="title has-text-white has-text-centered">Registrar</h1>
 
-          <?php if(isset($_SESSION['erro_login'])): ?>
-             <div class="notification is-danger has-text-centered" style="border-radius: 0;">
-                <?= $_SESSION['erro_login']; ?>
-                <?php unset($_SESSION['erro_login']); ?>
-             </div>
-          <?php endif; ?>
+            <form action="validar_registro.php" method="post">
 
-             <form action="valida_login.php" method="post">
               <div class="field">
-                <label class="label">Usuário</label>
+                <label class="label">Nome de Usuário</label>
                 <div class="control">
                   <input class="input" type="text" name="usuario" required>
                 </div>
@@ -43,15 +36,24 @@ include 'includes/header.php';
               </div>
 
               <div class="field">
+                <label class="label">Confirmar Senha</label>
                 <div class="control">
-                  <button class="button is-link is-fullwidth" type="submit">Entrar</button>
+                  <input class="input" type="password" name="confirmar_senha" required>
                 </div>
               </div>
+
+              <div class="field">
+                <div class="control">
+                  <button class="button is-link is-fullwidth" type="submit">Registrar</button>
+                </div>
+              </div>
+
             </form>
 
             <p class="has-text-centered is-size-7 mt-3">
-              <strong>Registrar-se: </strong> <a href="registro.php"> Clique Aqui </a>
+              <strong>Já tem conta? </strong> <a href="login.php">Clique Aqui</a>
             </p>
+
           </div>
         </div>
       </div>
