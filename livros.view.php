@@ -28,28 +28,29 @@ break;
                 <div class="box">
                     <h3 class="title is-5">Adicionar Livro</h3>
                     <form method="post" autocomplete="off">
+                         <input type="hidden" name="id" value="<?= htmlspecialchars($editId) ?>">
                         <div class="field">
                             <label class="label">Título</label>
                             <div class="control">
-                                <input class="input" name="titulo" value="<?= $editando ? htmlspecialchars($editarLivro['titulo']) : '' ?>" required>
+                                <input class="input" name="titulo" value="<?= htmlspecialchars($editTitulo) ?>" required>
                             </div>
                         </div>
                         <div class="field">
                             <label class="label">Autor</label>
                             <div class="control">
-                                <input class="input" name="autor" value="<?= $editando ? htmlspecialchars($editarLivro['autor']) : '' ?>" required>
+                                <input class="input" name="autor" value="<?= htmlspecialchars($editAutor) ?>" required>
                             </div>
                         </div>
                         <div class="field">
                             <label class="label">Ano</label>
                             <div class="control">
-                                <input class="input" name="ano" type="number" min="0" value= "<?=$editando ? htmlspecialchars($editarLivro['ano']) : '' ?>" placeholder="Opcional">
+                                <input class="input" name="ano" type="number" min="0" value= "<?= htmlspecialchars($editAno) ?>" placeholder="Opcional">
                             </div>
                         </div>
                         <div class="field">
                             <div class="control">
                                 <button class="button is-link">
-                                    <?= $editando ? "Salvar Alterações" : "Salvar" ?>
+                                    <?= $editId ? "Salvar Alterações" : "Salvar" ?>
                                 </button>
                             </div>
                         </div>

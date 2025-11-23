@@ -88,6 +88,26 @@ if (isset($_GET['edit'])) {
     }
 }
 
+$editId = "";
+$editTitulo = "";
+$editAutor = "";
+$editAno = "";
+
+if (isset($_GET['edit'])) {
+    foreach ($livros as $l) {
+        if ($l['id'] === $_GET['edit']) {
+
+            // Prepara valores para a VIEW
+            $editId     = $l['id'];
+            $editTitulo = $l['titulo'];
+            $editAutor  = $l['autor'];
+            $editAno    = $l['ano'];
+
+            break;
+        }
+    }
+}
+
 
 // chama a view (a view usará $livros)
 include 'livros.view.php';
