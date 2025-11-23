@@ -45,6 +45,7 @@
                             <input type="hidden" name="titulo" value="<?= htmlspecialchars($book['title']) ?>">
                             <input type="hidden" name="autor" value="<?= htmlspecialchars($book['authors']) ?>">
                             <input type="hidden" name="ano" value="<?= htmlspecialchars($book['year']) ?>">
+                            <input type="hidden" name="isbn" value="<?= htmlspecialchars($book['isbn']) ?>">
                             <button type="submit" class="button is-success">
                                 Importar para a Biblioteca
                             </button>

@@ -19,14 +19,14 @@
           <p class="title is-4 mb-1">Jhonathan Alves</p>
           <p class="subtitle is-6 has-text-grey-light">Desenvolvedor Backend • 22 anos</p>
           <p>
-            Sou um desenvolvedor Backend apaixonado por tecnologia e atualmente trabalho na área com a linguagem <strong>Laravel</strong>.
+            Sou um desenvolvedor Backend apaixonado por tecnologia e atualmente trabalho na área com a linguagem
+            <strong>Laravel</strong>.
           </p>
         </div>
       </div>
 
       <hr>
 
-      <!-- Davi -->
       <div class="columns is-vcentered is-centered mb-6">
         <div class="column is-narrow">
           <div class="is-flex is-justify-content-center is-align-items-center">
@@ -40,18 +40,14 @@
           <p class="title is-4 mb-1">Davi Gustavo</p>
           <p class="subtitle is-6 has-text-grey-light">Sou um Estudante de Programação no UniSalesiano Araçatuba-SP</p>
           <p>
-            Entusiasta de tecnologia e sempre buscando aprender mais sobre programação, desenvolvimento web e soluções práticas.
+            Entusiasta de tecnologia e sempre buscando aprender mais sobre programação, desenvolvimento web e soluções
+            práticas.
           </p>
         </div>
       </div>
 
       <hr>
-
-      <div class="content has-text-centered mt-6">
-        <p class="is-size-5">
-          <strong>Objetivo:</strong> Demonstrar autenticação, CRUD básico e uma estrutura de código limpa e bem organizada.
-        </p>
-      </div>
     </div>
+  </div>
   </div>
 </section>

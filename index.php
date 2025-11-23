@@ -11,7 +11,6 @@
     </section>
 
     <div class="columns mt-5 is-variable is-5">
-      <!-- Card 1: Livros cadastrados -->
       <div class="column is-half">
         <div class="card" style="height:100%;">
           <header class="card-header">
@@ -29,7 +28,6 @@
         </div>
       </div>
 
-      <!-- Card 2: Ações rápidas -->
       <div class="column is-half">
         <div class="card" style="height:100%;">
           <header class="card-header">
